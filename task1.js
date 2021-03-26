@@ -72,5 +72,4 @@ yargs.command({
     console.log(`${argv.month} (месяцы) назад было ${new Date(t.setMonth(t.getMonth() - argv.month))}`);
   }
 })
-.help()
 .argv
