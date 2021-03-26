@@ -4,7 +4,6 @@ const { hideBin } = require('yargs/helpers');
 const { argv } = require("yargs");
 const args = yargs(hideBin(process.argv)).argv;
 const t = new Date();
-
 yargs.command({
   command: "current",
   describe: "Команда для показа даты",
@@ -54,7 +53,7 @@ yargs.command({
   },
 
   handler: (argv) => {
-    console.log(`Через ${argv.day} будет ${t.getDate() + argv.day} день`);
+    console.log(`Через ${argv.day}(дни)  будет ${new Date(t.setDate(t.getDate() + argv.day))}`);
   }
 }).argv
 
@@ -70,6 +69,8 @@ yargs.command({
   },
 
   handler: (argv) => {
-    console.log(`${argv.month} месяцов назад был ${t.getMonth() - argv.month}-й месяц`);
+    console.log(`${argv.month} (месяцы) назад было ${new Date(t.setMonth(t.getMonth() - argv.month))}`);
   }
-}).argv
+})
+.help()
+.argv
