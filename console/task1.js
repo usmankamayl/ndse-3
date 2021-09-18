@@ -31,7 +31,7 @@ yargs.command({
     switch(true) {
       case argv.year: console.log(`Текущий год: ${t.getFullYear()}`);
         break;
-      case argv.month: console.log(`Текущий месяц ${t.getMonth()}`);
+      case argv.month: console.log(`Текущий месяц ${t.getMonth() + 1}`);
         break;
       case argv.date: console.log(`Сегодняшний день ${t.getDate()}`);
         break;
